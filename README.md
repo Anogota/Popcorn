@@ -26,4 +26,17 @@ We can find some intresting by only one look pretty nice /torrent. Let's go into
 
 ![image](https://github.com/Anogota/Popcorn/assets/143951834/ac75211d-5ec4-4171-9453-ca13454af234)
 
-We can upload a image, maybe by this we can do RCE. First step is ```cp /usr/share/webshell/php/php-reverse-shell.php ~/HTB``` and modifay there IP. I tryed, everything there, but can't upload jpg.php also chaning in burp too image/jpg, this don't work. But i upload a regular image on the website and deeper we can also see something intresting.
+We can upload a image, maybe by this we can do RCE. First step is ```cp /usr/share/webshell/php/php-reverse-shell.php ~/HTB``` and modifay there IP. I tryed, everything there, but can't upload jpg.php also chaning in burp too image/jpg, this don't work. But i upload a regular .torrent on the website and deeper we can also see something intresting.  We can upload screanshot, maybe there you can did a RCE
+
+![image](https://github.com/Anogota/Popcorn/assets/143951834/1e5ddcb6-e023-4dbc-b6b1-575a0731d79e)
+
+U need turn on the burp and intercept traffic.
+
+And change it form application/php to 
+
+![image](https://github.com/Anogota/Popcorn/assets/143951834/c1d42698-18a3-4a8a-af55-f24353191316)
+
+and u will upload a shell, u can see there you shell, only what you need to do is ```nc -lvnp 9001```
+and click into this shell:
+
+![image](https://github.com/Anogota/Popcorn/assets/143951834/938944f4-dfdd-45cc-8eb3-b3fd95a7b925)
