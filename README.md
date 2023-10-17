@@ -40,3 +40,33 @@ and u will upload a shell, u can see there you shell, only what you need to do i
 and click into this shell:
 
 ![image](https://github.com/Anogota/Popcorn/assets/143951834/938944f4-dfdd-45cc-8eb3-b3fd95a7b925)
+
+And we have a shell :)
+
+![image](https://github.com/Anogota/Popcorn/assets/143951834/a3ebdd9f-a740-4f6f-b3ed-ddb72bff5b57)
+
+Also in /home/george is user.txt, i don't show that time :).
+Let's grab a root, when i insert ls -la in /home/george i saw many intresting directory by many are empty.
+```
+lrwxrwxrwx 1 george george      9 Oct 26  2020 .bash_history -> /dev/null
+-rw-r--r-- 1 george george    220 Mar 17  2017 .bash_logout
+-rw-r--r-- 1 george george   3180 Mar 17  2017 .bashrc
+drwxr-xr-x 2 george george   4096 Mar 17  2017 .cache
+-rw------- 1 root   root     1571 Mar 17  2017 .mysql_history
+-rw------- 1 root   root       19 May  5  2017 .nano_history
+-rw-r--r-- 1 george george    675 Mar 17  2017 .profile
+-rw-r--r-- 1 george george      0 Mar 17  2017 .sudo_as_admin_successful
+-rw-r--r-- 1 george george 848727 Mar 17  2017 torrenthoster.zip
+-rw-r--r-- 1 george george     33 Oct 16 18:28 user.txt
+```
+But .cache are not empty, inside .cache we can ```motd.legal-displayed``` i've never saw this kind of file, little bit google about is and i found vuln.
+```
+https://www.exploit-db.com/exploits/14339
+```
+
+I download this exploit on machine.
+
+![image](https://github.com/Anogota/Popcorn/assets/143951834/b2214630-393d-4451-a7ba-0146e0ee741f)
+
+but rember to change chmod 700 ```/var/www/.ssh``` then ```chmod +x 14339.sh```
+And u got a root.
